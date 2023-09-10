@@ -59,7 +59,7 @@ git clone https://github.com/Sarmentor/CAOS-EXPERIMENTS.git
 
 ## Usage
 
-Please refer to the individual subdirectories within this repository for specific usage instructions and examples. Each subdirectory contains its own README file with detailed information on how to run the code, reproduce the simulations, or explore the data.
+Please refer to the individual subdirectories within this repository for specific usage instructions and examples. Each subdirectory should contain its own "README" file with detailed information on how to run the code, reproduce the simulations, or explore the data.
 
 ## Contributing
 
