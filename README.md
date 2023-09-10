@@ -1,7 +1,7 @@
 # CAOS-EXPERIMENTS
-MAN-MACHINE COOPERATION IN CAOS RELATED EXPERIMENTS AND CONCEPTS => (GPT POWERED PYTHON CODE)
+MAN-MACHINE COOPERATION IN CAOS-RELATED EXPERIMENTS AND CONCEPTS => (GPT-POWERED PYTHON CODE)
 
-GPT REQUEST: "Please write a interesting formal Github README file for a repository. This repository is about mixing CAOS theory and other Physics and Life Sciences concepts."
+GPT REQUEST: "Please write an interesting formal Github README file for a repository. This repository is about mixing CAOS theory and other Physics and Life Sciences concepts."
 
 # CAOS Theory and Interdisciplinary Sciences
 
@@ -23,7 +23,7 @@ Welcome to the CAOS Theory and Interdisciplinary Sciences repository! This repos
 
 ## Background
 
-The study of chaotic systems has fascinated scientists for decades. CAOS theory, which combines Chaos theory and Order theory, provides a framework to understand the behavior of complex systems that exhibit sensitivity to initial conditions. This theory has found applications in various fields, including Physics, Biology, Chemistry, and Engineering.
+The study of chaotic systems has fascinated scientists for decades. CAOS theory, which combines Chaos theory and Order theory, provides a framework for understanding the behavior of complex systems that exhibit sensitivity to initial conditions. This theory has found applications in various fields, including Physics, Biology, Chemistry, and Engineering.
 
 In this repository, we aim to explore the applications of CAOS theory in conjunction with other concepts from Physics and Life Sciences. By merging these disciplines, we hope to enhance our understanding of the underlying principles that govern the behavior of complex systems.
 
