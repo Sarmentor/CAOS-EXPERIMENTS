@@ -54,7 +54,7 @@ To use the resources in this repository, you will need to have the following dep
 To get started, simply clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone https://github.com/Sarmentor/CAOS-EXPERIMENTS.git
 ```
 
 ## Usage
