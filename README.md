@@ -4,7 +4,7 @@ MAN-MACHINE COOPERATION IN CAOS RELATED EXPERIMENTS AND CONCEPTS => (GPT POWERED
 Please write a interesting formal Github README file for a repository. This repository is about mixing CAOS theory and other Physics and Life Sciences concepts.
 # CAOS Theory and Interdisciplinary Sciences
 
-![CAOS Theory and Interdisciplinary Sciences](https://github.com/username/repo-name/blob/main/images/caos_image.jpg)
+![CAOS Theory and Interdisciplinary Sciences](1-persian-fractal-patterns.jpg)
 
 ## Introduction
 
