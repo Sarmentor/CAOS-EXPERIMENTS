@@ -19,7 +19,7 @@ Welcome to the CAOS Theory and Interdisciplinary Sciences repository! This repos
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license.md)
+- [License](license.md)
 
 ## Background
 
