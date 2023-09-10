@@ -1,7 +1,8 @@
 # CAOS-EXPERIMENTS
-MAN-MACHINE COOPERATION IN CAOS RELATED EXPERIMENTS AND CONCEPTS => (GPT POWERED PYTHON CODE)
+MAN-MACHINE COOPERATION IN CAOS-RELATED EXPERIMENTS AND CONCEPTS => (GPT-POWERED PYTHON CODE)
 
-Please write a interesting formal Github README file for a repository. This repository is about mixing CAOS theory and other Physics and Life Sciences concepts.
+GPT REQUEST: "Please write an interesting formal Github README file for a repository. This repository is about mixing CAOS theory and other Physics and Life Sciences concepts."
+
 # CAOS Theory and Interdisciplinary Sciences
 
 ![CAOS Theory and Interdisciplinary Sciences](1-persian-fractal-patterns.jpg)
@@ -22,7 +23,7 @@ Welcome to the CAOS Theory and Interdisciplinary Sciences repository! This repos
 
 ## Background
 
-The study of chaotic systems has fascinated scientists for decades. CAOS theory, which combines Chaos theory and Order theory, provides a framework to understand the behavior of complex systems that exhibit sensitivity to initial conditions. This theory has found applications in various fields, including Physics, Biology, Chemistry, and Engineering.
+The study of chaotic systems has fascinated scientists for decades. CAOS theory, which combines Chaos theory and Order theory, provides a framework for understanding the behavior of complex systems that exhibit sensitivity to initial conditions. This theory has found applications in various fields, including Physics, Biology, Chemistry, and Engineering.
 
 In this repository, we aim to explore the applications of CAOS theory in conjunction with other concepts from Physics and Life Sciences. By merging these disciplines, we hope to enhance our understanding of the underlying principles that govern the behavior of complex systems.
 
@@ -53,12 +54,12 @@ To use the resources in this repository, you will need to have the following dep
 To get started, simply clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone https://github.com/Sarmentor/CAOS-EXPERIMENTS.git
 ```
 
 ## Usage
 
-Please refer to the individual subdirectories within this repository for specific usage instructions and examples. Each subdirectory contains its own README file with detailed information on how to run the code, reproduce the simulations, or explore the data.
+Please refer to the individual subdirectories within this repository for specific usage instructions and examples. Each subdirectory should contain its own "README" file with detailed information on how to run the code, reproduce the simulations, or explore the data.
 
 ## Contributing
 
