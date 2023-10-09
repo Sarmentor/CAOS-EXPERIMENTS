@@ -2,7 +2,7 @@
 #please generate code for a simple generative NLP model with good efficiency
 #Certainly! Here is an example of a simple generative NLP model that uses a Markov Chain to generate text. This code generates text by taking a sequence of words and predicting the next word based on the probability of it appearing after the previous sequence of words. This is a very basic approach to NLP, but it can still produce some interesting results.
 
-```
+#```
 import random
 import re
 
@@ -31,7 +31,7 @@ def generate_text(corpus, n):
 
 corpus = "The quick brown fox jumps over the lazy dog."
 print(generate_text(corpus, 2))
-```
+#```
 
 #In this code, `corpus` is the input text that we want to generate new text from, and `n` is the number of words we want to use to predict the next word. The `generate_text` function first preprocesses the input text by converting it to lowercase and splitting it into individual words using regular expressions. It then builds a Markov Chain dictionary by iterating over the words and adding each n-gram (a tuple of n words) to the dictionary with its possible next words.
 
