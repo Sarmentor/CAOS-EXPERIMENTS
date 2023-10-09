@@ -2,15 +2,16 @@
 #Certainly! Here's a Python function that calculates the probability of occurrence of a normally distributed function using the chaos theory formula:
 
 #```python
-import math
+import math as mt
+from scipy.special import erfinv
 
 def chaos_theory_probability(probability):
     if probability <= 0 or probability >= 1:
         raise ValueError("Probability must be between 0 and 1.")
 
-    z_score = math.sqrt(2) * math.erfinv(2 * probability - 1)
+    z_score = mt.sqrt(2) * erfinv(2 * probability - 1)
 
-    return 1 - (1 / (1 + math.exp(z_score)))
+    return 1 - (1 / (1 + mt.exp(z_score)))
 
 # Example usage
 probability = 0.8
