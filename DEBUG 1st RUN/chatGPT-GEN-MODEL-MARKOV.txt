@@ -1,0 +1,4 @@
+  File "CAOS-EXPERIMENTS/GENERATION MARKOV MODEL/chatGPT-GEN-MODEL-MARKOV.py", line 5
+    ```
+    ^
+SyntaxError: invalid syntax

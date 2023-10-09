@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "CAOS-EXPERIMENTS/OLDA with CAOS/OLDA-WITH-CAOS.py", line 69, in <module>
+    word_network = generate_word_network(documents, num_topics, num_words)
+  File "CAOS-EXPERIMENTS/OLDA with CAOS/OLDA-WITH-CAOS.py", line 59, in generate_word_network
+    if word_similarities_sorted[j] != i:
+IndexError: index 2 is out of bounds for axis 0 with size 2

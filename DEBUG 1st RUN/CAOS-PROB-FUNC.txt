@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "CAOS-EXPERIMENTS/GENETIC ALGOS AND CAOS/CAOS-PROB-FUNC.py", line 17, in <module>
+    chaos_probability = chaos_theory_probability(probability)
+  File "CAOS-EXPERIMENTS/GENETIC ALGOS AND CAOS/CAOS-PROB-FUNC.py", line 11, in chaos_theory_probability
+    z_score = math.sqrt(2) * math.erfinv(2 * probability - 1)
+AttributeError: module 'math' has no attribute 'erfinv'

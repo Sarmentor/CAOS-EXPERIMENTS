@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "CAOS-EXPERIMENTS/NASH EQUILIBRIUM AND CAOS/NASH-EQ-CAOS.py", line 33, in <module>
+    strategies[range(num_players), best_responses] = 1
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
