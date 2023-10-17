@@ -18,7 +18,7 @@ num_players = 2
 strategies = np.random.uniform(0, 1, size=(num_players,))
 
 # Set chaos parameters
-chaos_param = 3.9
+chaos_param = 2.48
 num_iterations = 100
 
 # Iterate the game
@@ -30,7 +30,9 @@ for t in range(num_iterations):
     # Update strategies based on Nash equilibrium
     best_responses = np.argmax(payoff_matrix, axis=1)
     strategies = np.zeros_like(strategies)
-    strategies[range(num_players), best_responses] = 1
+    ####  !!! NOTE: FOR REVIEW !!! ####
+    for s in range(num_players):
+        strategies[s] = best_responses[1]
 
     # Introduce chaos by applying a logistic map
     strategies = chaos_param * strategies * (1 - strategies)
