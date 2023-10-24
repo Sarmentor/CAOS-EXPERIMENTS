@@ -47,14 +47,20 @@ def generate_word_network(documents, num_topics, num_words):
 
     # Normalize topic-word distribution
     topic_word_dist_norm = normalize(topic_word_dist, norm='l1', axis=1)
+    #print(topic_word_dist_norm)
 
     # Compute word similarities using cosine similarity
-    word_similarities = cosine_similarity(topic_word_dist_norm)
+    word_similarities = cosine_similarity(np.transpose(topic_word_dist_norm))
+    #print(word_similarities)
 
     # Sort word similarities and select top words for each word
     word_network = np.zeros((num_words, num_words))
+    
+    #print(documents)
+    
     for i in range(num_words):
         word_similarities_sorted = np.argsort(word_similarities[i])[::-1]
+        #print(word_similarities_sorted)
         for j in range(num_words):
             if word_similarities_sorted[j] != i:
                 word_network[i][word_similarities_sorted[j]] = word_similarities[i][word_similarities_sorted[j]]
@@ -64,7 +70,7 @@ def generate_word_network(documents, num_topics, num_words):
 # Example usage
 documents = ['apple banana orange', 'apple banana', 'orange grapefruit']
 num_topics = 2
-num_words = 3
+num_words = 4
 
 word_network = generate_word_network(documents, num_topics, num_words)
 print(word_network)
