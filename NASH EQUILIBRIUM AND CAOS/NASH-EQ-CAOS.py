@@ -11,39 +11,51 @@ import matplotlib.pyplot as plt
 
 # Define the game
 payoff_matrix = np.array([[1, 2],
-                          [0, 3]])
+                          [1, 3]])#,
+#                          [2, 0]])
 
 # Initialize player strategies
 num_players = 2
 strategies = np.random.uniform(0, 1, size=(num_players,))
+print(strategies)
 
 # Set chaos parameters
 chaos_param = 2.48
+#chaos_param = 4.8
+
 num_iterations = 100
 
 # Iterate the game
 history = []
 for t in range(num_iterations):
     # Calculate payoff for each player
-    payoffs = np.dot(payoff_matrix, strategies)
-
+    payoffs = np.dot(payoff_matrix.transpose(), strategies)
+    #print(payoffs)
+    
     # Update strategies based on Nash equilibrium
-    best_responses = np.argmax(payoff_matrix, axis=1)
+    best_responses = np.argmax(payoffs, axis=0)
+    #print(best_responses)
+    
     strategies = np.zeros_like(strategies)
-    ####  !!! NOTE: FOR REVIEW !!! ####
-    for s in range(num_players):
-        strategies[s] = best_responses[1]
+    
+    for i in range(num_players):
+        strategies[i] = payoffs[best_responses]
 
-    # Introduce chaos by applying a logistic map
-    strategies = chaos_param * strategies * (1 - strategies)
-
-    # Store strategies for visualization
+        # Introduce chaos by applying a logistic map
+        strategies[i] = chaos_param * strategies[i] * (1 - strategies[i])
+        
+        #NO CAOS
+        #strategies[i] = strategies[i]
+        
+        # Store strategies for visualization
     history.append(strategies.copy())
 
 # Plot the evolution of strategies
 history = np.array(history)
 plt.plot(history[:, 0], label='Player 1')
 plt.plot(history[:, 1], label='Player 2')
+#plt.plot(history[:, 2], label='Player 3')
+print(history)
 plt.xlabel('Iterations')
 plt.ylabel('Strategy')
 plt.legend()
