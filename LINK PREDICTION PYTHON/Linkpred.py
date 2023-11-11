@@ -7,7 +7,9 @@ from sklearn.model_selection import train_test_split
 
 # Load the Zachary Karate Club network dataset 
 G = nx.karate_club_graph() # Generate a list of all possible edges in the network 
-all_edges = list(nx.non_edges(G)) # Split the edges into training and testing sets 
+all_edges = list(nx.non_edges(G)) # Split the edges into training and testing sets
+
+##### NOTE TODO: TEST ALL RESULTS WITHOUT random_state DEFINED ##### 
 train_edges, test_edges = train_test_split(all_edges, test_size=0.3, random_state=42) 
 
 # Define the link prediction algorithms 
