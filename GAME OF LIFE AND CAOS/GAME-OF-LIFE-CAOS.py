@@ -4,7 +4,11 @@
 #```python
 import random
 
-def game_of_life(size, steps, chaos_prob):
+def chaos_prob_func(chaos_prob,lambda_weight):
+    
+    return (chaos_prob * lambda_weight * (1-chaos_prob))
+
+def game_of_life(size, steps, chaos_prob, lambda_weight):
     # Create an empty grid
     grid = [[0] * size for _ in range(size)]
 
@@ -27,7 +31,7 @@ def game_of_life(size, steps, chaos_prob):
                             live_neighbors += grid[x % size][y % size]
 
                 # Apply chaos theory in probability function
-                if random.random() < chaos_prob:
+                if random.random() < chaos_prob_func(chaos_prob, lambda_weight):
                     new_grid[i][j] = 1 - grid[i][j]  # Flip the cell
                 else:
                     # Apply the rules of the Game of Life
@@ -52,7 +56,7 @@ def game_of_life(size, steps, chaos_prob):
 #You can call this function with the desired parameters to simulate the Game of Life with chaos theory incorporated, for example:
 
 #```python
-result = game_of_life(size=10, steps=100, chaos_prob=0.1)
+result = game_of_life(size=10, steps=100, chaos_prob=0.1, lambda_weight=2.48)
 print(result)
 #```
 
