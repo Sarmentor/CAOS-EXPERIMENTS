@@ -25,6 +25,7 @@ def transform_to_normal(data):
     - transformation_matrix: Matrix of transformations for retrieval of original values.
     """
     _, p_value = shapiro(data)
+    print(f"Original Data Shapiro-Wilk p-value: {p_value}")
 
     if p_value < 0.05:  # If not normal, apply Box-Cox transformation
         transformed_data, transformation_matrix = boxcox(data)
@@ -44,7 +45,7 @@ transformed_data, transformation_matrix = transform_to_normal(non_normal_data)
 # Check if the distribution is now normal
 _, p_value_after_transformation = shapiro(transformed_data)
 
-print(f"Original Data Shapiro-Wilk p-value: {p_value}")
+
 print(f"Transformed Data Shapiro-Wilk p-value: {p_value_after_transformation}")
 
 
@@ -133,13 +134,16 @@ def create_lstm_model(input_shape):
 
 def train_lstm_model(X_train, y_train, epochs=50, batch_size=32):
     input_shape = X_train.shape[1:]
-    model = create_lstm_model(input_shape)
+    #print(input_shape)
+    model = create_lstm_model(input_shape=input_shape)
     model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=0)
     return model
 
 def predict_next_lambda(model, X):
-    # Reshape input for prediction
-    X = np.reshape(X, (1, X.shape[0], X.shape[1]))
+    ## Reshape input for prediction
+    ##print(X)
+    ##X = np.reshape(X, (1, X.shape[0], X.shape[1]))
+    X = [[[X]]]
     # Make prediction
     predicted_lambda = model.predict(X, verbose=0)
     return predicted_lambda[0, 0]
@@ -153,17 +157,21 @@ historic_lambdas = np.array([0.8, 1.2, 0.9, 1.1])
 X_train = historic_lambdas[:-1]
 y_train = historic_lambdas[1:]
 
+#print(X_train)
+#print(y_train)
+
 # Reshape input for training
 X_train = np.reshape(X_train, (X_train.shape[0], 1, 1))
+
+#print(X_train)
 
 # Train the LSTM model
 model = train_lstm_model(X_train, y_train, epochs=100, batch_size=1)
 
 # Predict the next lambda value
-predicted_lambda = predict_next_lambda(model, np.array([historic_lambdas[-1]]))
+predicted_lambda = predict_next_lambda(model, historic_lambdas[-1])
 print("Predicted Next Lambda:", predicted_lambda)
 
-
 ############################################
 ##### !!! ML MODEL WITH TENSORFLOW !!! #####
 ############################################
@@ -194,7 +202,9 @@ def calculate_sum_from_probability(probability, means, std_devs):
     return calculated_sums
 
 # Example usage:
-#target_probability = 0.8  # Replace with the actual target probability
+target_probability = 0.8  # Replace with the actual target probability
+mean = 21
+std_dev = 10
 
 calculated_sums = calculate_sum_from_probability(target_probability, mean, std_dev)
 print(f"Calculated Sum(s) for Probability {target_probability}: {calculated_sums}")
@@ -220,14 +230,14 @@ def predict_next_sum(predicted_lambda, current_sum, means, std_devs):
     # Calculate the probability of the next possible sums
     #next_possible_sums = np.arange(1, 41)
     #probabilities_next = [probability_current * predicted_lambda * calculate_probability_of_sum(s, means, std_devs) for s in next_possible_sums]
-	probabilities_next = probability_current * predicted_lambda * (1-probability_current)
+    probabilities_next = probability_current * predicted_lambda * (1-probability_current)
 
     # Normalize probabilities to make sure they sum to 1
     #probabilities_next /= sum(probabilities_next)
 
     # Choose the next sum based on probabilities
     #predicted_sum = np.random.choice(next_possible_sums, p=probabilities_next)
-	predicted_sum = calculate_sum_from_probability(probabilities_next,means,std_devs)
+    predicted_sum = calculate_sum_from_probability(probabilities_next,means,std_devs)
 	
     return predicted_sum
 
